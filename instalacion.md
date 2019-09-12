@@ -11,7 +11,7 @@ En el caso de RHEL/Centos debemos deshabilitar Selinux y Firewalld
 
 Posterior a la instalación, ejecutamos:
 
-systemctl enable docker && systemctl start docker
+> systemctl enable docker && systemctl start docker
 
 #### Observacion
 Debemos crear un usuario que sea dueño del proceso ( docker ) por temas de seguridad.
