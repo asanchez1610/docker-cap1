@@ -3,6 +3,7 @@
 Para este punto, la distribución linux es "agnostica" por lo cual este procedimiento es generico:
 
 > curl -fsSL https://get.docker.com -o get-docker.sh
+
 > sh get-docker.sh
 
 #### Observacion
