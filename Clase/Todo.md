@@ -81,3 +81,13 @@ Se pueden aplicar filtros, por ejm. docker inspect ID_CONTAINER | grep IPA
 
 * Para ejecutar un comando en un contenedor sin acceder a el:
 > docker exec ID_CONTAINER mkdir -p /tmp/prueba  ||  docker exec ID_CONTAINER ls -lta /tmp 
+
+
+# REDES 
+
+
+
+# VOLUMENES
+
+
+
