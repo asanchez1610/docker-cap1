@@ -14,23 +14,24 @@ Multi-stage ( ejecución de n-imagenes para obtener una imagen resultante desead
 
 ### Comandos/Imagenes 
 
-Para buscar imagenes: 
+* Para buscar imagenes: 
 > docker search mongo 
 
 **OBS**
 
 Docker Hub, es el repositorio publico que usa Docker para poder descargar imagenes, no obstante tambien podemos tener nuestro propio **registry**
 
-Para descargar una imagen:
+* Para descargar una imagen:
 > docker pull mongo 
 
-Para listar una imagen descargada: 
+* Para listar una imagen descargada: 
 > docker image ls // docker images
 
 **OBS**
+
 Desde la version 18.X de Docker se incorpora que "images" liste directamente imagenes sin depender de *ls* 
 
-Para borrar una imagen
+* Para borrar una imagen
 > docker rmi ID_IMAGEN
 
 ## Contenedores
@@ -42,41 +43,41 @@ Para borrar una imagen
 
 ## Comandos/Contenedores
 
-Para iniciar un contenedor:
+* Para iniciar un contenedor:
 > docker run mongo 
 
-Para ver el estado de un contenedor: 
+* Para ver el estado de un contenedor: 
 > docker ps -a  // docker container ls -a // docker container ps -a 
 
-Para detener un contendor:
+* Para detener un contendor:
 > docker stop ID_CONTAINER
 
-Para iniciar un contenedor en base a un nombre:
+* Para iniciar un contenedor en base a un nombre:
 > docker run --name db_mongo mongo
 
-Para iniciar un contenedor en background:
+* Para iniciar un contenedor en background:
 > docker run -dit --name db_mongo mongo
 
-Para eliminar un contenedor:
+* Para eliminar un contenedor:
 > docker rm -fv ID_CONTAINER
 
 ### TIP
 
-Para borrar contenedores en una sola linea:
+* Para borrar contenedores en una sola linea:
 >  docker rm -fv $(docker ps -qa) 
 
-Para ver el detalle de un contenedor:
+* Para ver el detalle de un contenedor:
 > docker inspect ID_CONTAINER 
 
 **OBS**
 
 Se pueden aplicar filtros, por ejm. docker inspect ID_CONTAINER | grep IPA 
 
-Para ver el log que se ejecuta dentro de un contenedor: 
+* Para ver el log que se ejecuta dentro de un contenedor: 
 > docker logs ID_CONTAINER 
 
-Para entran en un contendor:
+* Para entran en un contendor:
 > docker exec -it ID_CONTAINER bash 
 
-Para ejecutar un comando en un contenedor sin acceder a el:
+* Para ejecutar un comando en un contenedor sin acceder a el:
 > docker exec ID_CONTAINER mkdir -p /tmp/prueba  ||  docker exec ID_CONTAINER ls -lta /tmp 
