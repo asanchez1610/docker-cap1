@@ -115,6 +115,26 @@ Si no indicamos el tipo de red, por defecto sera **bridge**
 
 # VOLUMENES
 
+Existen 3 tipos de volumenes:
+
+* Volumen: es la manera sencilla y predefinida para almacenar todos los ficheros en un contenedor, usa el espacio de Host en **/var/lib/docker/volumes** y crea una carpeta para cada contenedor.
+
+* Para crear un volume:
+> docker volume create VG_DATA
+
+* Para asignar el volume creado a un contenedor:
+> docker run -d -it --name web100 -v VG_DATA:/var/lib/mysql ubuntu
+
+* Volumen bind: es una manera de asociar una carpeta de nuestro Host y mapearla como una carpeta dentro de un contenedor.
+Este sistema nos permite ver esa carpeta desde el contenedor y también desde nuestro Host. Usar esos ficheros, copiarlos y además en caso de tener una solución de almacenamiento distribuido, poder tener múltiples copias.
+
+* Ejemplo:
+> docker run -d -it --name web200 -v /tmp/database:/var/lib/mysql ubuntu
+
+* TMPFS (temporal file system): es una manera de montar carpetas temporales en un contenedor. Usan la RAM del equipo y su contenido desaparecerá al parar el contenedor.
+
+* Ejemplo:
+> docker run -d -it --name web300 --tmpfs /var/html/tempo ubuntu
 
 Segunda Parte: [Link](https://github.com/kdetony/docker-practico)
 
