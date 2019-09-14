@@ -85,7 +85,33 @@ Se pueden aplicar filtros, por ejm. docker inspect ID_CONTAINER | grep IPA
 
 # REDES 
 
+Existen 3 redes preconfiguradas en Docker:
 
+* Bridge: red standard que usarán todos los contenedores.
+* Host: el contenedor usará la misma IP del Host.
+* None: se utiliza para indicar que un contenedor no tiene asignada una red.
+
+* Para listar las redes que tenemos creadas:
+> docker network ls 
+
+* Y si queremos inspeccionar una red
+> docker network inspect bridge
+
+* Para crear una red:
+> docker network create test
+
+**OBSERVACION**
+
+Si no indicamos el tipo de red, por defecto sera **bridge**
+
+* Para crear una red especifica:
+> docker network create --driver **bridge red_test**
+
+* Asignamos la red creada a un contenedor:
+> docker run -d -P --name cont_web --network red_test nginx
+
+* Para eliminar una red:
+> docker network delete NAME_RED
 
 # VOLUMENES
 
